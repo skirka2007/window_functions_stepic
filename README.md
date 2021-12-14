@@ -1,1 +1,1 @@
-# window_functions_stepic
+This folder represents the practical learning tasks from the Stepic course about window functions in SQL. To learn more about this course, click <a href="https://stepik.org/course/95367/syllabus">here</a>.
