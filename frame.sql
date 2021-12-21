@@ -14,6 +14,8 @@ RANGE BETWEEN frame_start AND frame_end
 * N preceding 
 * N following 
 * unbounded following 
+
+RANGE BETWEEN unbounded preceding AND current row - by default
 */
 
 SELECT id, name, department, salary,
@@ -39,3 +41,19 @@ FROM employees
 WINDOW w AS (ORDER BY salary
 			groups between 1 following and 1 following)
 ORDER by salary, id;
+
+
+SELECT id, name, salary,
+    COUNT(*) OVER w AS p10_cnt
+FROM employees
+WINDOW w AS (ORDER BY salary
+             RANGE BETWEEN CURRENT ROW AND 10 FOLLOWING)
+ORDER BY salary, id
+
+
+SELECT id, name, salary,
+    MAX(salary) OVER w AS lower_sal
+FROM employees
+WINDOW w AS (ORDER BY salary
+             RANGE BETWEEN 30 PRECEDING AND 10 PRECEDING)
+ORDER BY salary, id
