@@ -1,7 +1,7 @@
-/*
+/* rows/group/range is based on the same value, asit was in order by.
 ROWS BETWEEN frame_start AND frame_end
 GROUPS BETWEEN frame_start AND frame_end - isn't supported by mysql
-RANGE BETWEEN frame_start AND frame_end
+RANGE BETWEEN frame_start AND frame_end 
 
 (frame_start) could be:
 * current row 
